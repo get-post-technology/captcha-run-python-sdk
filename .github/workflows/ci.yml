@@ -3,7 +3,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - master
+      - main
     tags:
       - "*"
     paths:
@@ -13,7 +13,7 @@ on:
       - "!example/__version__.py" # TODO
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - ".github/workflows/ci.yml"
       - "**.py"
