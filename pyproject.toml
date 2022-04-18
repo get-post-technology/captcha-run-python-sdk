@@ -9,16 +9,13 @@ version = "0.1.0"
 homepage = "https://captcha.run"
 repository = "https://github.com/captcha-run/python-sdk"
 
-classifiers = [
-  "Programming Language :: Python :: 3",
-]
+classifiers = ["Programming Language :: Python :: 3"]
 
-packages = [
-  {include = "example"}, # TODO
-]
+packages = [{ include = "captcharun" }]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+httpx = "^0.22.0"
 
 [tool.poetry.dev-dependencies]
 black = "*"

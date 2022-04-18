@@ -10,7 +10,7 @@ on:
       - ".github/workflows/ci.yml"
       - "**.py"
       - "poetry.lock"
-      - "!example/__version__.py" # TODO
+      - "!captcharun/__version__.py"
   pull_request:
     branches:
       - main
@@ -18,7 +18,7 @@ on:
       - ".github/workflows/ci.yml"
       - "**.py"
       - "poetry.lock"
-      - "!example/__version__.py" # TODO
+      - "!captcharun/__version__.py"
 
 jobs:
   tests:
