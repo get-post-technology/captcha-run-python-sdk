@@ -1,4 +1,4 @@
-from captcharun.__version__ import VERSION, __version__  # TODO
+from captcharun.__version__ import VERSION, __version__
 
 
 def test_version():
