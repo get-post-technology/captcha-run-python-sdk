@@ -53,9 +53,7 @@ class CreateTask(BaseRequest):
         self.task = task
         self.developer = developer
 
-    @property
-    def data(self):
-        return dict(
+        self._data = dict(
             developer=self.developer,
             **self.task.data,
         )
