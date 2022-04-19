@@ -1,4 +1,4 @@
-from typing import Union
+from typing import List, Union
 
 from captcharun.utils import to_base64
 
@@ -84,8 +84,8 @@ class HCaptchaClassificationTask(BaseTask):
     def __init__(
         self,
         question: str,
-        queries: list[Union[str, bytes]],
-        anchors: list[Union[str, bytes]],
+        queries: List[Union[str, bytes]],
+        anchors: List[Union[str, bytes]],
     ):
         queries = [to_base64(q) for q in queries]
         anchors = [to_base64(a) for a in anchors]
