@@ -52,8 +52,15 @@ jobs:
         env:
           CAPTCHARUN_TOKEN: ${{ secrets.CAPTCHARUN_TOKEN }}
         run: |
-          pytest -o log_cli=true -o log_cli_level=DEBUG
-
+          pytest --cov=captcharun --cov-report=xml -o log_cli=true -o log_cli_level=DEBUG
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage.xml
+          directory: ./coverage/reports/
+          env_vars: OS,PYTHON
+          fail_ci_if_error: true
+        
   publish:
     needs: tests
     if: startsWith(github.ref, 'refs/tags/')
