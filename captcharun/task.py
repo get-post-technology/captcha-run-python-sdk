@@ -6,9 +6,6 @@ from captcharun.utils import to_base64
 class BaseTask:
     captcha_type = None
 
-    def __init__(self):
-        self._data = {}
-
     @property
     def data(self):
         return {

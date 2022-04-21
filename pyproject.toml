@@ -4,7 +4,7 @@ description = ""
 license = "MIT"
 name = "captcharun"
 readme = "README.md"
-version = "0.2.0"
+version = "0.2.1"
 
 homepage = "https://captcha.run"
 repository = "https://github.com/captcha-run/python-sdk"
