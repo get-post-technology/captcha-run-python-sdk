@@ -23,3 +23,42 @@
 </div>
 
 ---
+
+# 例子
+
+## 查询余额
+```python
+from captcharun import Client, GetBalance, CreateTask
+client = Client("你的 TOKEN")
+result = client.invoke(GetBalance())
+
+print(result)
+# {'cumulativeRecharge': '1100', 'share': '0.0960', 'balance': '103.508', 'credit': '0', 'cumulativeShare': '0.0960'}
+
+```
+
+## 创建任务 & 获取状态
+```python
+from captcharun import Client, GetBalance, GetTask, CreateTask
+from captcharun.task import ReCaptchaV2Task
+
+client = Client("你的 TOKEN")
+
+# 创建任务
+result = client.invoke(
+    CreateTask(
+        ReCaptchaV2Task(
+            "SITE KEY",
+            "SITE REFERER",
+        ),
+        developer="开发者 ID"
+    ),
+)
+print(result) 
+# {'taskId': '492ca979-7559-4012-ac31-3134b9ce63f8'}
+
+# 获取任务状态 (异步返回)
+result = client.invoke(GetTask(result['taskId']))
+print(result)
+
+```

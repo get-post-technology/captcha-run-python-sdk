@@ -3,8 +3,7 @@ from uuid import uuid4
 import pytest
 from httpx import HTTPStatusError
 
-from captcharun import Client, GetBalance, GetTask
-from captcharun.request import CreateTask
+from captcharun import Client, CreateTask, GetBalance, GetTask
 from captcharun.task import ReCaptchaV2Task
 
 client = Client()

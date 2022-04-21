@@ -1,2 +1,2 @@
 from .client import Client
-from .request import GetBalance, GetTask
+from .request import CreateTask, GetBalance, GetTask
