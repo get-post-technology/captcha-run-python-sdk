@@ -7,7 +7,7 @@ readme = "README.md"
 version = "0.2.1"
 
 homepage = "https://captcha.run"
-repository = "https://github.com/captcha-run/python-sdk"
+repository = "https://github.com/get-post-technology/captcha-run-python-sdk"
 
 classifiers = ["Programming Language :: Python :: 3"]
 
