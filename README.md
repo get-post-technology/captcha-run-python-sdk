@@ -3,12 +3,12 @@
 <h1>CaptchaRun Python SDK</h1>
 
 <p>
-<a href="https://github.com/captcha-run/python-sdk/actions?query=workflow%3ACI">
-<img src="https://github.com/captcha-run/python-sdk/workflows/CI/badge.svg" alt="Github Action Test" />
+<a href="https://github.com/get-post-technology/captcha-run-python-sdk/actions?query=workflow%3ACI">
+<img src="https://github.com/get-post-technology/captcha-run-python-sdk/workflows/CI/badge.svg" alt="Github Action Test" />
 </a>
 
 <a href="https://app.codecov.io/gh/captcha-run/python-sdk/">
-<img alt="Codecov" src="https://img.shields.io/codecov/c/github/captcha-run/python-sdk">
+<img alt="Codecov" src="https://codecov.io/gh/get-post-technology/captcha-run-python-sdk/branch/main/graph/badge.svg?token=NUIJJ4BK8H">
 </a>
 </p>
 
