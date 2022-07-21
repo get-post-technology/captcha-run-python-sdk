@@ -62,3 +62,61 @@ result = client.invoke(GetTask(result['taskId']))
 print(result)
 
 ```
+
+
+## 完整创建任务 + 等待 + 重试例子
+```python
+import time
+from captcharun import Client, GetTask, CreateTask
+from captcharun.task import ReCaptchaV2Task
+
+
+# 你可以手动指定 token
+# client = Client("xxxxxxxxxxxxxxxxxxx")
+# 不然会自动从环境变量 CAPTCHARUN_TOKEN 获取 
+client = Client()
+
+
+# 简单获取 token
+def get_token(timeout = 180):
+    result = client.invoke(
+        CreateTask(
+            ReCaptchaV2Task(
+                "xxxxxxxxxxxxxxxxxxx",
+                "https://example.com",
+            ),
+            developer="开发者 ID"
+        ),
+    )
+
+    task_id = result.get("taskId")
+    if task_id is None:
+        print("创建任务失败")
+        return
+    
+    start_time = time.time()
+    result = client.invoke(GetTask(task_id))
+
+    while result["status"] == "Working" and time.time() - start_time < timeout:
+        time.sleep(3)
+        result = client.invoke(GetTask(task_id))
+    
+    return result['response']['gRecaptchaResponse']
+
+
+# 失败自动重试
+def get_token_with_retry(retry_times=3, timeout=180):
+    for _ in range(retry_times):
+        try:
+            token = get_token(timeout)
+            if token is not None:
+                return token
+        except Exception as e:
+            print(e)
+
+    return None
+
+
+if __name__ == '__main__':
+    print(get_token_with_retry())
+```
