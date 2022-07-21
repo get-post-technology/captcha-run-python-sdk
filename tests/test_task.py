@@ -27,20 +27,15 @@ def test_construct_ReCaptchaV3_task():
 
 
 def test_construct_ReCaptchaV2Classification_task():
-    with pytest.raises(AssertionError):
-        ReCaptchaV2ClassificationTask("a", "b")
-    with pytest.raises(AssertionError):
-        ReCaptchaV2ClassificationTask("a", "/m/b", 2)
-
-    task = ReCaptchaV2ClassificationTask("a", "/m/b")
+    task = ReCaptchaV2ClassificationTask("a", "b")
     assert task.data == {
         "captchaType": "ReCaptchaV2Classification",
         "image": "a",
-        "question": "/m/b",
+        "question": "b",
         "resize": 0,
     }
 
-    task0 = ReCaptchaV2ClassificationTask(b"a", "/m/b")
+    task0 = ReCaptchaV2ClassificationTask(b"a", "b")
     assert task0.data == {**task.data, "image": "YQ=="}
 
 

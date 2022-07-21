@@ -1,10 +1,10 @@
 [tool.poetry]
 authors = ["CaptchaRun <admin@captcha.run>"]
-description = ""
+description = "CaptchaRun Official Python SDK"
 license = "MIT"
 name = "captcharun"
 readme = "README.md"
-version = "0.2.2"
+version = "0.2.3"
 
 homepage = "https://captcha.run"
 repository = "https://github.com/get-post-technology/captcha-run-python-sdk"
