@@ -54,7 +54,6 @@ class ReCaptchaV2ClassificationTask(BaseTask):
     def __init__(self, image: Union[bytes, str], question: str, resize: int = 0):
         image = to_base64(image)
 
-        assert question.startswith("/m/"), "question must start with /m/"
         assert resize in (-1, 0, 1, 3, 4)
 
         self._data = {
